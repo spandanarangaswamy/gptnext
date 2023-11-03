@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export default async function handler(req, res) {
-
+  const apiKey = process.env.OPENAI_API_KEY;
   const referer = req.headers.referer || req.headers.referrer; // get the referer from the request headers
 
   if (req.method !== 'POST') {
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       const url = 'https://api.openai.com/v1/chat/completions';
       const headers = {
         'Content-type': 'application/json',
-        'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
+        'Authorization': `Bearer ${apiKey}`
       };
 
       const response = await axios.post(url, body, { headers: headers })
