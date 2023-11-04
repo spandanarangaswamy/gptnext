@@ -44,9 +44,9 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto max-w-[700px]">
-      <div className="flex flex-col h-screen bg-gray-900">
-        <h1 className="bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center py-3 font-bold text-6xl">ChatGPT</h1>
+    <div className="container mx-auto max-w-[1000px]">
+      <div className="flex flex-col h-screen bg-black-1100">
+        <h1 className="bg-orange-500 text-transparent bg-clip-text text-center py-3 font-bold text-6xl">Nextgpt</h1>
         <div className="flex-grow p-6">
           <div className="flex flex-col space-y-4">
           {
@@ -55,8 +55,8 @@ export default function Home() {
             message.type === 'user' ? 'justify-end' : 'justify-start'
             }`}>
             <div className={`${
-              message.type === 'user' ? 'bg-purple-500' : 'bg-gray-800'
-            } rounded-lg p-4 text-white max-w-sm`}>
+              message.type === 'user' ? 'bg-orange-500' : 'bg-pink-600'
+            } rounded-lg p-4 text-black max-w-sm`}>
             {message.message}
             </div>
             </div>
@@ -74,8 +74,8 @@ export default function Home() {
         </div>
         <form onSubmit={handleSubmit} className="flex-none p-6">
           <div className="flex rounded-lg border border-gray-700 bg-gray-800">  
-        <input type="text" className="flex-grow px-4 py-2 bg-transparent text-white focus:outline-none" placeholder="Type your message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-            <button type="submit" className="bg-purple-500 rounded-lg px-4 py-2 text-white font-semibold focus:outline-none hover:bg-purple-600 transition-colors duration-300">Send</button>
+        <input type="text" className="flex-grow px-4 py-2 bg-transparent text-white focus:outline-none" placeholder="Ask Something..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+            <button type="submit" className="bg-orange-500 rounded-lg px-4 py-2 text-black font-semibold focus:outline-none hover:bg-pink-600 transition-colors duration-300">Send message</button>
             </div>
         </form>
         </div>
